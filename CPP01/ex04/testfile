@@ -1,0 +1,38 @@
+EDGE CASES TO TEST:
+1. Incorrect number of arguments
+2. Empty file
+3. Empty s1
+4. Error opening/reading file
+5. s1 and s2 same
+6. s1 not present in file
+
+
+
+THE REPLACEMENT WORD SHOULD BE PRESENT 4 TIMES IN THE FOLLOWING PASSAGE:
+
+The test word is "Nicole."
+Nicole at the start of the line
+At the end of the line, Nicole
+WithinNicolewords.
+
+
+
+ADLIBS:
+"Ever since the Nicole incident, I haven’t been able to look at a Nicole the same way.
+It all started when I found a Nicole in my Nicole, and let’s just say things escalated quickly.
+By the time the Nicole arrived, there was already a suspicious amount of Nicole involved.
+I tried to explain, but they just handed me a Nicole and walked away.
+Honestly, I don’t regret a thing—except maybe the Nicole part."
+
+
+
+
+THE REPLACEMENT WORD SHOULD NOT BE PRESENT IN THE FOLLOWING PASSAGE:
+
+It shouldn't work for different cases like "nicole"
+It shouldn't work for parts of the word N i c ole
+It shouldn't work for when the word spans multiple lines:
+Nico
+le
+
+
