@@ -4,7 +4,7 @@ NAME = AbstractClass
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
 
-SOURCES = Brain.cpp AbstractAnimal.cpp Cat.cpp Dog.cpp main.cpp WrongCat.cpp WrongAnimal.cpp
+SOURCES = Brain.cpp AAnimal.cpp Cat.cpp Dog.cpp main.cpp WrongCat.cpp WrongAnimal.cpp
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

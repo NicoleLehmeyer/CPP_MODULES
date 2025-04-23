@@ -26,6 +26,5 @@ WrongAnimal::~WrongAnimal() {std::cout << "WrongAnimal Destructor Called." << st
 void WrongAnimal::setType(std::string type) {this->_type = type;}
 std::string WrongAnimal::getType(void) const {return (this->_type);}
 
-void WrongAnimal::makeSound() const {std::cout << getType() << ":  *WRONGANIMAL SOUNDS*" << std::endl;}
-
+void WrongAnimal::makeSound() const {std::cout << "  *WRONGANIMAL SOUNDS*" << std::endl;}
 

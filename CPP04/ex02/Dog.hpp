@@ -14,10 +14,10 @@
 
 #include <iostream>
 #include <string>
-#include "AbstractAnimal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog: public AbstractAnimal {
+class Dog: public AAnimal {
 
 	private:
 		Brain *_dogBrain;

@@ -12,14 +12,14 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : AbstractAnimal("Cat") {_catBrain = new Brain(); std::cout << "CAT Constructor Called." << std::endl;}
-Cat::Cat(const Cat &copy) : AbstractAnimal(copy) {std::cout << "CAT Copy Constructor Called." << std::endl;}
+Cat::Cat() : AAnimal("Cat") {_catBrain = new Brain(); std::cout << "CAT Constructor Called." << std::endl;}
+Cat::Cat(const Cat &copy) : AAnimal(copy) {std::cout << "CAT Copy Constructor Called." << std::endl;}
 Cat& Cat::operator=(const Cat &copy)
 {
 	if (this != &copy)
 	{
 		std::cout << "CAT Copy Assignment Operator Called." << std::endl;
-		AbstractAnimal::operator=(copy);
+		AAnimal::operator=(copy);
 		this->_type = copy.getType();
 		if (_catBrain)
 		{

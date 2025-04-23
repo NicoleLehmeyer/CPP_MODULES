@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AbstractAnimal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
@@ -23,16 +23,18 @@ int main ()
 	std::cout << "**    INCOMPILABLE (CANNOT INSTANTIATE ABSTRACT CLASS):    **" << std::endl;
 	std::cout << "*************************************************************" << std::endl << std::endl;
 
-	AbstractAnimal a;
+	// TEST 1:
+	AAnimal a;
 
-	AbstractAnimal *b = new AbstractAnimal;
+	// TEST 2:
+	AAnimal *b = new AAnimal;
 	delete b;
 
 	// std::cout << std::endl << "*************************************************************" << std::endl;
-	// std::cout << "**                    ARRAY BRAIN TESTS:                   **" << std::endl;
+	// std::cout << "**          ARRAY BRAIN TESTS (These should work):         **" << std::endl;
 	// std::cout << "*************************************************************" << std::endl << std::endl;
 
-	// const AbstractAnimal *animalArray[2];
+	// const AAnimal *animalArray[2];
 
 	// 	animalArray[0] = new Dog();
 	// 	animalArray[1] = new Cat();
@@ -53,5 +55,5 @@ int main ()
 	// 	delete animalArray[i];
 	// 	std::cout << std::endl;
 	// }
-	return (0);
+	// return (0);
 }

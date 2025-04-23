@@ -43,18 +43,29 @@ std::cout << std::endl << "*****************************************************
 	std::cout << "**                  NICOLE'S RONG TESTS:                  **" << std::endl;
 	std::cout << "*************************************************************" << std::endl << std::endl;
 
-	const WrongAnimal *thatsWrong = new WrongAnimal();
-	const WrongAnimal *r = new WrongCat();
+
+	const WrongAnimal *Animol = new WrongAnimal();
+	const WrongAnimal *Cart = new WrongCat();
 
 	std::cout << std::endl;
-	std::cout << "r is a " << r->getType() << std::endl;
+
+	std::cout << "Animol is a " << Animol->getType() << std::endl;
+	Animol->makeSound();
+
 	std::cout << std::endl;
-	r->makeSound();
-	thatsWrong->makeSound();
 	std::cout << std::endl;
 
-	delete r;
-	delete thatsWrong;
+	std::cout << "Cart is a " << Cart->getType() << std::endl;
+	Cart->makeSound();
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	delete Animol;
+	delete Cart;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
 
 	return (0);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AbstractAnimal.hpp                                 :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlehmeye <nlehmeye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,17 +16,17 @@
 #include <iostream>
 #include <string>
 
-class AbstractAnimal {
+class AAnimal {
 
 	protected:
 		std::string _type;
 
 	public:
-		AbstractAnimal();
-		AbstractAnimal(std::string type);
-		AbstractAnimal(const AbstractAnimal &copy);
-		AbstractAnimal& operator=(const AbstractAnimal &copy);
-		virtual ~AbstractAnimal();
+		AAnimal();
+		AAnimal(std::string type);
+		AAnimal(const AAnimal &copy);
+		AAnimal& operator=(const AAnimal &copy);
+		virtual ~AAnimal();
 		
 		void setType(std::string type);
 		std::string getType(void) const;

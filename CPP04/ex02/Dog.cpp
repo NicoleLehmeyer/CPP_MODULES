@@ -12,14 +12,14 @@
 
 #include "Dog.hpp"
 
-Dog::Dog() : AbstractAnimal("Dog") {_dogBrain = new Brain(); std::cout << "DOG Constructor Called." << std::endl;}
-Dog::Dog(const Dog &copy) : AbstractAnimal(copy) {_dogBrain = new Brain(*copy._dogBrain); std::cout << "DOG Copy Constructor Called." << std::endl;}
+Dog::Dog() : AAnimal("Dog") {_dogBrain = new Brain(); std::cout << "DOG Constructor Called." << std::endl;}
+Dog::Dog(const Dog &copy) : AAnimal(copy) {_dogBrain = new Brain(*copy._dogBrain); std::cout << "DOG Copy Constructor Called." << std::endl;}
 Dog& Dog::operator=(const Dog &copy)
 {
 	if (this != &copy)
 	{
 		std::cout << "DOG Copy Assignment Operator Called." << std::endl;
-		AbstractAnimal::operator=(copy);
+		AAnimal::operator=(copy);
 		this->_type = copy.getType();
 		if (_dogBrain)
 		{

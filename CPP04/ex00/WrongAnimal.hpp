@@ -25,11 +25,11 @@ class WrongAnimal {
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &copy);
 		WrongAnimal& operator=(const WrongAnimal &copy);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
+		//virtual ~WrongAnimal();
 		
 		void setType(std::string type);
 		std::string getType(void) const;
 
-		virtual void makeSound() const;
-
+		void makeSound() const;
 };
