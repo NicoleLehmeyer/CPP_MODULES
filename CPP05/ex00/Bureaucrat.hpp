@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <exception>
 
 class Bureaucrat {
 	private:
@@ -20,4 +21,8 @@ class Bureaucrat {
 		void setName(std::string name);
 		void setGrade(std::string grade);
 
+		void incrementGrade();
+		void decrementGrade();
+
+		//ADD AND IMPLEMENT BOTH EXCEPTIONS. 
 };
