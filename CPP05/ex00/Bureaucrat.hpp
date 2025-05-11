@@ -24,5 +24,16 @@ class Bureaucrat {
 		void incrementGrade();
 		void decrementGrade();
 
-		//ADD AND IMPLEMENT BOTH EXCEPTIONS. 
+		std::ostream &operator<<(std::ostream &os, Bureaucrat const &other);
+
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
+
 };

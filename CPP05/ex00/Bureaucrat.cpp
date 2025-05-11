@@ -45,4 +45,14 @@ void Bureaucrat::decrementGrade()
 		this->_grade++;
 }
 
+// ostream is a general output stream class in the C++ standard lib
+// It is the base type for various output streams, inclusive of cout, ofstream and ostringstream
+
+std::ostream &Bureaucreat::operator<<(std::ostream &os, Bureaucrat const &aBureau);
+{
+	os << aBureau.getName() << ", bureaucrat grade " << aBureau.getGrade() << "." std::endl;
+}
+
+
+
 //std::exemption
