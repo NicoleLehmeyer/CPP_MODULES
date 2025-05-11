@@ -24,6 +24,8 @@ class Bureaucrat {
 		void incrementGrade();
 		void decrementGrade();
 
+		void signForm(Form &aForm);
+
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char *what() const throw();

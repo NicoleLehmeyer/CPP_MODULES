@@ -46,6 +46,15 @@ void Bureaucrat::decrementGrade()
 		this->_grade++;
 }
 
+void Bureaucrat::signForm(Form &aForm)
+{
+		//if signed:
+			// <bureaucrat> signed <form>
+		//if not signed:
+			// <bureaucrat> couldn't sign <form> because <reason>
+
+}
+
 // Fully classified name, of classes AND nested classes (exception classes)
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
