@@ -1,14 +1,8 @@
 #include "Form.hpp"
 
-Form::Form() {}
+Form::Form() : _name("Name"), _isSigned(false), _signGrade(150), _executeGrade(150) {} 
 
-Form::Form(std::string const &name, int const signGrade, int const executeGrade)
-{
-	this->_name = name;
-	this->_isSigned = 0;
-	this->_signGrade = signGrade;
-	this->_executeGrade = executeGrade;
-}
+Form::Form(std::string const &name, int const signGrade, int const executeGrade) : _name(name), _isSigned(false), _signGrade(signGrade), _executeGrade(executeGrade) {}
 
 Form::Form(Form const &other) {*this = other;}
 
@@ -26,31 +20,33 @@ Form::~Form() {}
 std::string const &Form::getName() const {return (this->_name);}
 bool const &Form::getSignedStatus() const {return (this->_isSigned);}
 int const &Form::getSignGrade() const {return (this->_signGrade);}
-int const &Form::geExecutetGrade() const {return (this->_executeGrade);}
+int const &Form::getExecuteGrade() const {return (this->_executeGrade);}
 
 void Form::setName(std::string const &name) {this->_name = name;}
 void Form::setSignedStatus(bool value) {this->_isSigned = value;}
-void Form::setSignGrade(int const &grade) {this->_signGrade = grade;}
-void Form::setExecuteGrade(int const &grade) {this->_executeGrade = grade;}
+void Form::setSignGrade(int const &signGrade) {this->_signGrade = signGrade;}
+void Form::setExecuteGrade(int const &executeGrade) {this->_executeGrade = executeGrade;}
 
-bool Form::beSigned(Bureaucrat &aBureau)
+void Form::beSigned(Bureaucrat &aBureau)
 {
-	this->setSignedStatus() = 1;
-	return (this->getSignedStatus());
+	if (aBureau.getGrade() <= this->getSignGrade())
+		this->setSignedStatus(true);
+	else
+		throw GradeTooLowException();
 }
 
-const char *form::GradeTooHighException::what() const throw()
+const char *Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high!");
+	return ("grade too high");
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low!");
+	return ("grade too low");
 }
 
 std::ostream &operator<<(std::ostream &os, Form const &aForm)
 {
-	os << "Form: " << this->getName() << std::endl << "Signed Status: " << this->getSignedStatus() << std::endl << "Sign Grade: " << this->getSignGrade() << std::endl << "Execute Grade: " << this->getExecuteGrade() << std::endl;
+	os << "Form: " << aForm.getName() << std::endl << "Signed Status: " << aForm.getSignedStatus() << std::endl << "Sign Grade: " << aForm.getSignGrade() << std::endl << "Execute Grade: " << aForm.getExecuteGrade() << std::endl;
 	return (os);
 }

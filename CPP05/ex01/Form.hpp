@@ -10,8 +10,8 @@ class Form {
 	private:
 		std::string	_name;
 		bool		_isSigned;
-		int const	_signGrade;
-		int const	_executeGrade;
+		int			_signGrade;
+		int 		_executeGrade;
 
 	public:
 
@@ -28,10 +28,10 @@ class Form {
 
 		void setName(std::string const &name);
 		void setSignedStatus(bool value);	
-		void setSignGrade(int const &grade);
-		void setExecuteGrade(int const &grade);
+		void setSignGrade(int const &signGrade);
+		void setExecuteGrade(int const &executeGrade);
 
-		bool beSigned(Bureaucrat &aBureau);
+		void beSigned(Bureaucrat &aBureau);
 
 		class GradeTooHighException : public std::exception {
 			public:

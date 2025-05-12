@@ -1,10 +1,10 @@
 .PHONY: all clean fclean re
 
-NAME = Bureaucrat
+NAME = Maggots
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
 
-SOURCES = Bureaucrat.cpp main.cpp 
+SOURCES = Bureaucrat.cpp Form.cpp main.cpp 
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
