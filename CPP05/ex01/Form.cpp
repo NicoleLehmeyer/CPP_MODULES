@@ -2,10 +2,10 @@
 
 Form::Form() {}
 
-Form::Form(std::string const &name, bool isSigned, int const signGrade, int const executeGrade)
+Form::Form(std::string const &name, int const signGrade, int const executeGrade)
 {
 	this->_name = name;
-	this->_isSigned = isSigned;
+	this->_isSigned = 0;
 	this->_signGrade = signGrade;
 	this->_executeGrade = executeGrade;
 }
@@ -33,14 +33,11 @@ void Form::setSignedStatus(bool value) {this->_isSigned = value;}
 void Form::setSignGrade(int const &grade) {this->_signGrade = grade;}
 void Form::setExecuteGrade(int const &grade) {this->_executeGrade = grade;}
 
-void Form::beSigned(Bureaucrat &aBureau)
+bool Form::beSigned(Bureaucrat &aBureau)
 {
-
-// Changes the form to signed if Bureau's grade is high enough or equal to required one
-// 
-
+	this->setSignedStatus() = 1;
+	return (this->getSignedStatus());
 }
-
 
 const char *form::GradeTooHighException::what() const throw()
 {

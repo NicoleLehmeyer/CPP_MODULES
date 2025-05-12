@@ -1,5 +1,10 @@
+#pragma once
+
 #include <iostream>
 #include <exception>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 	private:
@@ -11,7 +16,7 @@ class Form {
 	public:
 
 		Form();
-		Form(std::string const &name, bool isSigned, int const signGrade, int const executeGrade);
+		Form(std::string const &name, int const signGrade, int const executeGrade);
 		Form(Form const &other);
 		Form &operator=(Form const &other);
 		~Form();
@@ -26,7 +31,7 @@ class Form {
 		void setSignGrade(int const &grade);
 		void setExecuteGrade(int const &grade);
 
-		void beSigned(Bureaucrat &aBureau);
+		bool beSigned(Bureaucrat &aBureau);
 
 		class GradeTooHighException : public std::exception {
 			public:

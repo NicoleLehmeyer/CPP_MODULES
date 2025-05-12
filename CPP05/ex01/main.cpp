@@ -3,69 +3,38 @@
 
 int main()
 {
-	std::cout << std::endl << std::endl << "*************************************************************" << std::endl;
-	std::cout << "**   CASE:            \"Neau\", Grade 151                    **" << std::endl;
-	std::cout << "**   EXPECTED OUTPUT: Nil construct, catch exception       **" << std::endl;
-	std::cout << "*************************************************************" << std::endl << std::endl;
+	std::cout << std::endl << std::endl << "**********************************************************************" << std::endl;
+	std::cout << "**   CASE:            Bureaucrat: \"Au\", Grade 100                     **" << std::endl;
+	std::cout << "**                    Form: \"Form 1A\", min sign Grade 100             **" << std::endl;
+	std::cout << "**   EXPECTED OUTPUT: Print form info & form signed by Bureaucrat   **" << std::endl;
+	std::cout << "**********************************************************************" << std::endl << std::endl;
 
-	try
-	{
-		Bureaucrat n("Neau", 151);
+		Bureaucrat a("Au", 100);
+		std::cout << a;
+		Form f1a("Form 1A", 100, 120);
+		std::cout << f1a;
+		a.signForm(f1a);
+
+	std::cout << std::endl << std::endl << "**********************************************************************" << std::endl;
+	std::cout << "**   CASE:            Bureaucrat: \"Beau\", Grade 1                       **" << std::endl;
+	std::cout << "**                    Form: \"Form 2A\", signGrade 2                      **" << std::endl;
+	std::cout << "**   EXPECTED OUTPUT: Print bureau & form info, form not signed-lowgrade  **" << std::endl;
+	std::cout << "**************************************************************************" << std::endl << std::endl;
+
+		Bureaucrat b("Beau", 1);
+		std::cout << b;
+		Form f2a("Form 2A", 2, 120);
+		std::cout << f2a;
+		b.signForm(f2a);
+
+	std::cout << std::endl << std::endl << "**********************************************************************" << std::endl;
+	std::cout << "**   CASE:            Bureaucrat: \"Neau\", Grade 3                          **" << std::endl;
+	std::cout << "**                    Form: \"Form 2A\", signGrade 2                         **" << std::endl;
+	std::cout << "**   EXPECTED OUTPUT: Print bureau & form info, form signed by Bureaucrat  **" << std::endl;
+	std::cout << "*****************************************************************************" << std::endl << std::endl;
+
+		Bureaucrat n("Neau", 3);
 		std::cout << n;
-	}
-	catch(const std::exception &except)
-	{
-		std::cout << "Exception: " << except.what() << std::endl;
-	}
-
-	std::cout << std::endl << std::endl << "*************************************************************" << std::endl;
-	std::cout << "**   CASE:            \"Beau\", Grade 1                      **" << std::endl;
-	std::cout << "**   EXPECTED OUTPUT: Successful construct                 **" << std::endl;
-	std::cout << "*************************************************************" << std::endl << std::endl;
-
-	try
-	{
-		Bureaucrat b("Beau", 1);
-		std::cout << b;
-	}
-	catch(const std::exception &except)
-	{
-		std::cout << "Exception: " << except.what() << std::endl;
-	}
-
-
-	std::cout << std::endl << std::endl << "*************************************************************" << std::endl;
-	std::cout << "**   CASE:            INCREMENT - \"Beau\", Grade 1          **" << std::endl;
-	std::cout << "**   EXPECTED OUTPUT: Catch exception                      **" << std::endl;
-	std::cout << "*************************************************************" << std::endl << std::endl;
-	try
-	{
-		Bureaucrat b("Beau", 1);
-		std::cout << b;
-		b.incrementGrade();
-		std::cout << b;
-	}
-	catch(const std::exception &except)
-	{
-		std::cout << "Exception: " << except.what() << std::endl;
-	}
-
-	std::cout << std::endl << std::endl << "*************************************************************" << std::endl;
-	std::cout << "**   CASE:            DECREMENT - \"Beau\", Grade 1          **" << std::endl;
-	std::cout << "**   EXPECTED OUTPUT: Successful decrement                 **" << std::endl;
-	std::cout << "*************************************************************" << std::endl << std::endl;
-	try
-	{
-		Bureaucrat b("Beau", 1);
-		std::cout << b;
-		std::cout << "**Decrementing Grade**" << std::endl;
-		b.decrementGrade();
-		std::cout << b;
-	}
-	catch(const std::exception &except)
-	{
-		std::cout << "Exception: " << except.what() << std::endl;
-	}
-
-
+		std::cout << f2a;
+		n.signForm(f2a);
 }

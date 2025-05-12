@@ -48,11 +48,13 @@ void Bureaucrat::decrementGrade()
 
 void Bureaucrat::signForm(Form &aForm)
 {
-		//if signed:
-			// <bureaucrat> signed <form>
-		//if not signed:
-			// <bureaucrat> couldn't sign <form> because <reason>
-
+	if (this->getGrade() <= aForm.getSignGrade())
+	{
+		aForm.beSigned(*this);
+		std::cout << this->getName() << " signed " << aForm.getName() << std::endl;
+	}
+	else
+		std::cout << this->getName() << " couldn't sign " << aForm.getName() << " because Bureaucrat grade too low to sign/authorise form." << std::endl;
 }
 
 // Fully classified name, of classes AND nested classes (exception classes)
