@@ -27,12 +27,22 @@ void AForm::setSignedStatus(bool value) {this->_isSigned = value;}
 void AForm::setSignGrade(int const &signGrade) {this->_signGrade = signGrade;}
 void AForm::setExecuteGrade(int const &executeGrade) {this->_executeGrade = executeGrade;}
 
-void AForm::beSigned(Bureaucrat &aBureau)
+void AForm::beSigned(Bureaucrat const &aBureau)
 {
 	if (aBureau.getGrade() <= this->getSignGrade())
 		this->setSignedStatus(true);
 	else
 		throw GradeTooLowException();
+}
+
+void AForm::execute(Bureaucrat const &executor)
+{
+	if (this->getSignedStatus == false)
+		throw UnsignedFormException();
+	if (executor.getGrade() > this->getExecuteGrade())
+		throw GradeTooLowException();
+	//WRITE THE ACTION FUNCTION!!!
+	//action();
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
@@ -43,6 +53,11 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return ("grade too low");
+}
+
+const char *AForm::UnsignedFormException::what() const throw()
+{
+	return ("form not signed");
 }
 
 std::ostream &operator<<(std::ostream &os, AForm const &form_ref)
