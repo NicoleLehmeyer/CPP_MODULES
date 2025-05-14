@@ -41,8 +41,7 @@ void AForm::execute(Bureaucrat const &executor)
 		throw UnsignedFormException();
 	if (executor.getGrade() > this->getExecuteGrade())
 		throw GradeTooLowException();
-	//WRITE THE ACTION FUNCTION!!!
-	//action();
+	action();
 }
 
 const char *AForm::GradeTooHighException::what() const throw()

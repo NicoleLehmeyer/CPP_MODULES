@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <exception>
+#include <fstream>
+#include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
