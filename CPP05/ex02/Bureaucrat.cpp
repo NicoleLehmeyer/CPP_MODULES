@@ -71,7 +71,7 @@ void Bureaucrat::executeForm(AForm &form_ref)
 		std::cout << this->getName() << " couldn't execute " << form_ref.getName() << " because " << except.what() << "." << std::endl;
 		return;
 	}
-	std::cout << this->getName() << " signed " << form_ref.getName() << std::endl;
+	std::cout << this->getName() << " executed " << form_ref.getName() << std::endl;
 }
 
 // Fully classified name, of classes AND nested classes (exception classes)

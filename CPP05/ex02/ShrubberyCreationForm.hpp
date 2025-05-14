@@ -2,7 +2,7 @@
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm: public AForm {
+class ShrubberyCreationForm : public AForm {
 	private:
 		std::string _target;
 		virtual void action() const;

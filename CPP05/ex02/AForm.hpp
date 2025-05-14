@@ -4,6 +4,8 @@
 #include <exception>
 #include <fstream>
 #include <string>
+#include <cstdlib>
+#include <time.h>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -35,6 +37,8 @@ class AForm {
 
 		void beSigned(Bureaucrat const &aBureau);
 		void execute(Bureaucrat const &executor);
+
+		virtual void action() const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:

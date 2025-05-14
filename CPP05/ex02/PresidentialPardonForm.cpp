@@ -6,16 +6,16 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &other) : AForm(other) {*this = other;}
 
-PresidentialPardonForm::PresidentialPardonForm &operator=(PresidentialPardonForm const &other)
+PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &other)
 {
 	this->_target = other._target;
-	setSignedStatus(getSignedStatus(other));
+	setSignedStatus(other.getSignedStatus());
 	return (*this);
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
-void *PresidentialPardonForm::action() const
+void PresidentialPardonForm::action() const
 {
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 };

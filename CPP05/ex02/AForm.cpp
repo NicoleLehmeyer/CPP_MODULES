@@ -37,7 +37,7 @@ void AForm::beSigned(Bureaucrat const &aBureau)
 
 void AForm::execute(Bureaucrat const &executor)
 {
-	if (this->getSignedStatus == false)
+	if (this->getSignedStatus() == false)
 		throw UnsignedFormException();
 	if (executor.getGrade() > this->getExecuteGrade())
 		throw GradeTooLowException();
@@ -61,6 +61,6 @@ const char *AForm::UnsignedFormException::what() const throw()
 
 std::ostream &operator<<(std::ostream &os, AForm const &form_ref)
 {
-	os << "AForm: " << form_ref.getName() << std::endl << "Signed Status: " << form_ref.getSignedStatus() << std::endl << "Sign Grade: " << form_ref.getSignGrade() << std::endl << "Execute Grade: " << aAForm.getExecuteGrade() << std::endl;
+	os << "AForm: " << form_ref.getName() << std::endl << "Signed Status: " << form_ref.getSignedStatus() << std::endl << "Sign Grade: " << form_ref.getSignGrade() << std::endl << "Execute Grade: " << form_ref.getExecuteGrade() << std::endl;
 	return (os);
 }

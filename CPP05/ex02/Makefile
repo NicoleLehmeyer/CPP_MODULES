@@ -4,7 +4,7 @@ NAME = Maggots
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
 
-SOURCES = Bureaucrat.cpp Form.cpp main.cpp 
+SOURCES = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp 
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
@@ -21,6 +21,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm *_shrubbery
 
 re:		fclean all
 
