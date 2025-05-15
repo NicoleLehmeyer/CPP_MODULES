@@ -1,6 +1,6 @@
 .PHONY: all clean fclean re
 
-NAME = Maggots
+NAME = Intern
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
 
@@ -21,7 +21,6 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	rm *_shrubbery
 
 re:		fclean all
 

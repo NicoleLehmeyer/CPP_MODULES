@@ -18,7 +18,6 @@ class AForm {
 		int 		_executeGrade;
 
 	public:
-
 		AForm();
 		AForm(std::string const &name, int const signGrade, int const executeGrade);
 		AForm(AForm const &other);
