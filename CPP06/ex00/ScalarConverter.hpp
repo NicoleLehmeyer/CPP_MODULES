@@ -14,4 +14,9 @@ class ScalarConverter {
 		virtual ~ScalarConverter();
 
 		virtual void convert(std::string const &literal) const = 0;
+
+		class ErrorInvalidArgument : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		}
 };
