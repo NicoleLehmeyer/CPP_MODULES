@@ -1,74 +1,65 @@
 #include "ScalarConverter.hpp"
+
 ScalarConverter::ScalarConverter() {}
-ScalarConverter::ScalarConverter(ScalarConverter const &other) {return (*this)}
-ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other) {*this = other}
-~ScalarConverter::ScalarConverter() {}
+ScalarConverter::~ScalarConverter() {}
 
 void float_convert(std::string string)
 {
-	if (string == "nanf" || string == "-inff" || string = "+inff")
+	if (string.find('.') == std::string::npos)
+		throw (ScalarConverter::InvalidInput());
 
-	std::size_t fullstop = string.find('.');
-	if (fullstop == std::string::npos)
+	string.erase(string.size() - 1, 1);
+	char *endString = NULL;
+	strtod(string.c_str(), &endString);
+	if (endString != '\0')
 	{
-		//error - try & catch
+		throw (ScalarConverter::InvalidInput());
 	}
-	
+	//TO DO:
+		//convert it all - char, int, double, float
+	// std::cout << "FLOAT CONVERT CALLED. This is the string: " << string << "\n";
+
 }
-
-void pseudoNan_convert()
+void ScalarConverter::convert(std::string const &literal)
 {
-	if (literal[0] == '+')
-	{
-		//std::cout << "char: impossible" << std::endl;
-		//std::cout << "int: impossible" << std::endl;
-		//std::cout << "float: nanf" << std::endl;
-		//std::cout << "double: nan" << std::endl;
-	}
-	else if (literal[0] == '-')
-	{
-		//std::cout << "char: impossible" << std::endl;
-		//std::cout << "int: impossible" << std::endl;
-		//std::cout << "float: nanf" << std::endl;
-		//std::cout << "double: nan" << std::endl;
-	}
-	else //nan
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: nanf" << std::endl;
-		std::cout << "double: nan" << std::endl;
-	}
-}
-
-void ScalarConverter::convert(std::string const &literal) const
-{
-	std::vector<std::string> pseudoNans = ("nan", "nanf", "-inf", "-inff", "+inf", "+inff");
-	for (std::vector<std::string>::iterator it = pseudoNans.begin(); it != pseudoNans.end(); it++)
-	{
-		if (literal.find(it))
-			pseudoNan_convert(literal);
-	}
-
-	if (literal.end() == 'f')
+	if (literal.empty())
+		throw (ScalarConverter::InvalidInput());
+	if (*(literal.end() - 1) == 'f')
 		float_convert(literal);
-	else if (literal.find('.') != std::string::npos)
-		double_convert()
 
-
-
-	// Static casting
-	std::cout << "char: " << SOMETHING << std::endl;
-	std::cout << "int: " << SOMETHING << std::endl;
-	std::cout << "float: " << SOMETHING << std::endl;
-	std::cout << "double: " << SOMETHING << std::endl;
 }
 
-
-const char *ScalarConverter::ErrorInvalidArgument::what() const throw()
+const char *ScalarConverter::InvalidInput::what() const throw()
 {
-	return ("   ** ERROR **\n\nInvalid argument - ensure to input one of the following data types:\n<char>\n<int>\n<double>\n<float>\n")
+	return ("ERROR:\tInvalid Input.\n");
 }
 
 
 
+
+//OTHER STUFF, MIGHT BE USEFUL:
+/*
+
+template <typename T>
+std::string to_string(const T& thing) {
+    std::ostringstream sstream;
+    sstream
+        << std::setprecision(std::numeric_limits<T>::digits10 + 1)
+        << std::fixed
+        << thing;
+    return (sstream.str());
+}
+
+static std::string& truncate_zeros(std::string& str) {
+    unsigned long first_not_zero = str.find_last_not_of("0");
+    unsigned long period = str.find(".");
+    if (first_not_zero != std::string::npos && period != std::string::npos && first_not_zero >= period) {
+        if (first_not_zero == period) {
+            first_not_zero++;
+        }
+        str.erase(first_not_zero + 1);
+    }
+    return (str);
+}
+
+*/

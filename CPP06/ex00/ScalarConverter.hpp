@@ -3,20 +3,20 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <exception>
 
 class ScalarConverter {
 	private:
+		ScalarConverter();
+		ScalarConverter (ScalarConverter const &other);
+		ScalarConverter &operator=(ScalarConverter const &other);
+		~ScalarConverter();
 
 	public:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &other);
-		ScalarConverter &operator=(ScalarConverter const &other);
-		virtual ~ScalarConverter();
+		static void convert(std::string const &literal);
 
-		virtual void convert(std::string const &literal) const = 0;
-
-		class ErrorInvalidArgument : public std::exception {
+		class InvalidInput : public std::exception {
 			public:
 				virtual const char *what() const throw();
-		}
+		};
 };
