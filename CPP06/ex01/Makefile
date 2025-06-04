@@ -1,10 +1,10 @@
 .PHONY: all clean fclean re
 
-NAME = serialisze
+NAME = serialize
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
 
-SOURCES = Serializer.cpp main.cpp
+SOURCES = Serializer.cpp Data.cpp main.cpp
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

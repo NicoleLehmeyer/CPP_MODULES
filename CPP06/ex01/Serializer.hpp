@@ -1,20 +1,20 @@
 #pragma once
 
+#include "Data.hpp"
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+#include <cstdint>
 
-typedef struct Data {
-
-};
-
-
-class Sterializer {
+class Serializer {
 	private:
+		Serializer();
+		Serializer(Serializer const &other);
+		Serializer &operator=(Serializer const &other);
+		~Serializer();
 
 	public:
-		uintptr_t serialize(Data *ptr);
-		Data *deserialize(uintptr_t raw);
-
+		static uintptr_t serialize(Data *ptr);
+		static Data *deserialize(uintptr_t raw);
 
 };
