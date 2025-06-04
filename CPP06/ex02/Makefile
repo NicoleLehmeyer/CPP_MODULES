@@ -1,10 +1,10 @@
 .PHONY: all clean fclean re
 
-NAME = convert
+NAME = abc
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
 
-SOURCES = ScalarConverter.cpp main.cpp
+SOURCES = A.cpp B.cpp C.cpp Base.cpp main.cpp
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
@@ -24,4 +24,4 @@ fclean: clean
 
 re:		fclean all
 
-# make re && leaks --atExit -- ./Bureaucrat
+# make re && leaks --atExit -- ./abc
