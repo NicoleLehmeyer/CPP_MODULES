@@ -40,12 +40,26 @@ void identify(Base *p)
 
 void identify(Base &p)
 {
-	if (dynamic_cast<A *>(&p))
+	try
+	{
+		(void)dynamic_cast<A &>(p);
 		std::cout << "Object pointed to by &p: A" << std::endl;
-	else if(dynamic_cast<B *>(&p))
+	}
+	catch (...) {};
+	
+	try
+	{
+		(void)dynamic_cast<B &>(p);
 		std::cout << "Object pointed to by &p: B" << std::endl;
-	else if(dynamic_cast<C *>(&p))
+	}
+	catch (...) {};
+
+	try
+	{
+		(void)dynamic_cast<C &>(p);
 		std::cout << "Object pointed to by &p: C" << std::endl;
+	}
+	catch (...) {};
 	// Prints type of object pointed to by p A/B/C. Can't use a pointer inside this function
 }
 
