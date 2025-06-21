@@ -5,8 +5,8 @@
 
 class Bureaucrat {
 	private:
-		std::string _name;
-		int			_grade;
+		const std::string	_name;
+		int					_grade;
 	
 	public:
 		Bureaucrat();
@@ -18,7 +18,6 @@ class Bureaucrat {
 		std::string const &getName() const;
 		int const &getGrade() const;
 		
-		void setName(std::string const &name);
 		void setGrade(int const &grade);
 
 		void incrementGrade();

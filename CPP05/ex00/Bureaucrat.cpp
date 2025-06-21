@@ -27,7 +27,6 @@ Bureaucrat::~Bureaucrat() {}
 std::string const &Bureaucrat::getName() const {return (this->_name);}
 int const &Bureaucrat::getGrade() const {return (this->_grade);}
 
-void Bureaucrat::setName(std::string const &name) {this->_name = name;}
 void Bureaucrat::setGrade(int const &grade) {this->_grade = grade;}
 
 void Bureaucrat::incrementGrade()

@@ -41,6 +41,7 @@ int main()
 	{
 		Bureaucrat b("Beau", 1);
 		std::cout << b;
+		std::cout << "** Call incrementGrade() **" << std::endl;
 		b.incrementGrade();
 		std::cout << b;
 	}
@@ -57,7 +58,7 @@ int main()
 	{
 		Bureaucrat b("Beau", 1);
 		std::cout << b;
-		std::cout << "**Decrementing Grade**" << std::endl;
+		std::cout << "** Call decrementGrade() **" << std::endl;
 		b.decrementGrade();
 		std::cout << b;
 	}
@@ -65,6 +66,4 @@ int main()
 	{
 		std::cout << "Exception: " << except.what() << std::endl;
 	}
-
-
 }

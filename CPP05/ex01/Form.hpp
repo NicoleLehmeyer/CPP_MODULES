@@ -8,10 +8,10 @@ class Bureaucrat;
 
 class Form {
 	private:
-		std::string	_name;
-		bool		_isSigned;
-		int			_signGrade;
-		int 		_executeGrade;
+		const std::string	_name;
+		bool				_isSigned;
+		const int			_signGrade;
+		const int 			_executeGrade;
 
 	public:
 
@@ -26,10 +26,7 @@ class Form {
 		int const &getSignGrade() const;
 		int const &getExecuteGrade() const;
 
-		void setName(std::string const &name);
-		void setSignedStatus(bool value);	
-		void setSignGrade(int const &signGrade);
-		void setExecuteGrade(int const &executeGrade);
+		void setSignedStatus(bool value);
 
 		void beSigned(Bureaucrat &aBureau);
 

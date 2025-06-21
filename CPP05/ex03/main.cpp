@@ -36,7 +36,7 @@ int main()
 		std::cout << std::endl;
 		delete intern_scf;
 
-		std::cout << " ** EXPECTED OUTPUT: SHRUBBERY CREATION FORM CREATED **" << std::endl;
+		std::cout << " ** EXPECTED OUTPUT: FAIL TO CREATE & SEG FAULT **" << std::endl;
 		AForm *intern_nourgh;
 		intern_nourgh = intern.makeForm("NourghhhForm", "Nicole");
 		std::cout << std::endl;		

@@ -12,10 +12,10 @@ class Bureaucrat;
 
 class AForm {
 	protected:
-		std::string	_name;
-		bool		_isSigned;
-		int			_signGrade;
-		int 		_executeGrade;
+		const std::string	_name;
+		bool				_isSigned;
+		const int			_signGrade;
+		const int 			_executeGrade;
 
 	public:
 		AForm();
@@ -29,10 +29,7 @@ class AForm {
 		int const &getSignGrade() const;
 		int const &getExecuteGrade() const;
 
-		void setName(std::string const &name);
 		void setSignedStatus(bool value);	
-		void setSignGrade(int const &signGrade);
-		void setExecuteGrade(int const &executeGrade);
 
 		void beSigned(Bureaucrat const &aBureau);
 		void execute(Bureaucrat const &executor);

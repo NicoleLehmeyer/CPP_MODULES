@@ -22,10 +22,7 @@ bool const &Form::getSignedStatus() const {return (this->_isSigned);}
 int const &Form::getSignGrade() const {return (this->_signGrade);}
 int const &Form::getExecuteGrade() const {return (this->_executeGrade);}
 
-void Form::setName(std::string const &name) {this->_name = name;}
 void Form::setSignedStatus(bool value) {this->_isSigned = value;}
-void Form::setSignGrade(int const &signGrade) {this->_signGrade = signGrade;}
-void Form::setExecuteGrade(int const &executeGrade) {this->_executeGrade = executeGrade;}
 
 void Form::beSigned(Bureaucrat &aBureau)
 {
