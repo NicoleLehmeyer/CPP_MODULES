@@ -67,7 +67,7 @@ void char_convert(std::string string)
 }
 int convert_pseudo(std::string string)
 {
-	if (string == "+inf" || string == "+inff")
+	if (string == "+inf" || string == "+inff" || string == "inf" || string == "inff")
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
