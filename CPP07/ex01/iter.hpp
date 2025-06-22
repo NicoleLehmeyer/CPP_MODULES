@@ -1,5 +1,18 @@
 
 
+template <typename type> void print(type item)
+{
+	std::cout << item << std::endl;
+}
+
+template <typename type> void iter(type *arr, int arr_length, void (*f_ptr)(type const&))
+{
+	for (int i = 0; i < arr_length; i++)
+	{
+		f_ptr(arr[i]);
+	}
+}
+
 // Make a function template 'iter' that takes 3 parameters and returns nothing
 
 // PARAMETERS:

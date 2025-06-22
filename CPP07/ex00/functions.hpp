@@ -1,6 +1,26 @@
 
+template <typename type> type max(type value1, type value2)
+{
+	if (value1 > value2)
+		return value1;
+	else
+		return value2;
+}
 
+template <typename type> type min(type value1, type value2)
+{
+	if (value1 < value2)
+		return value1;
+	else
+		return value2;
+}
 
+template <typename type> void swap(type& value1, type& value2)
+{
+	type temp = value1;
+	value1 = value2;
+	value2 = temp;
+}
 
 // Use templates
 

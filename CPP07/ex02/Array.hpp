@@ -1,4 +1,11 @@
 
+template <typename type> class Array {
+	public:
+		Array();
+		
+
+}
+
 //	Develop class template Array that contains elements of type 'T'
 //	and implements the following behaviour and functions:
 //
