@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+
 #include "Array.hpp"
 
 #define MAX_VAL 750
@@ -27,6 +29,16 @@ int main(int, char**)
             std::cerr << "didn't save the same value!!" << std::endl;
             return 1;
         }
+    }
+	
+	try
+    {
+        numbers[1] = 12;
+		std::cout << numbers[1] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
     try
     {
