@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+#pragma once
 
 // Write function easyfind() that accepts a type 'T'
 // It takes two params, one type T, another integer
@@ -9,6 +8,3 @@
 
 // NO OCCURRENCE - Throw exception or return error of choice
 // TIP: Analyse how standard containers behave
-=======
-#pragma once
->>>>>>> 3aeb713d8e8b3402353e14a200a6910f0641129d

@@ -1,10 +1,6 @@
 .PHONY: all clean fclean re
 
-<<<<<<< HEAD
-NAME = functions
-=======
 NAME = mutant
->>>>>>> 3aeb713d8e8b3402353e14a200a6910f0641129d
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
 
@@ -28,4 +24,4 @@ fclean: clean
 
 re:		fclean all
 
-# make re && leaks --atExit -- ./functions
+# make re && leaks --atExit -- ./mutant
