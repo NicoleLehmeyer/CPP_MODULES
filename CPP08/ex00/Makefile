@@ -24,4 +24,8 @@ fclean: clean
 
 re:		fclean all
 
+<<<<<<< HEAD
 # make re && leaks --atExit -- ./easyfind
+=======
+# make re && leaks --atExit -- ./functions
+>>>>>>> 3aeb713d8e8b3402353e14a200a6910f0641129d
