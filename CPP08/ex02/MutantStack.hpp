@@ -2,6 +2,7 @@
 
 #include <stack>
 #include <iostream>
+#include <cassert>
 
 template <typename T> class MutantStack : public std::stack<T> {
 	private:
@@ -31,3 +32,13 @@ template <typename T> class MutantStack : public std::stack<T> {
 };
 
 #include "MutantStack.tpp"
+
+//std::stack is a container adapter
+//It stores elements in an underlying container (c)
+//c is protected in standard std::stack implementation
+//When a class publicly inherits from std::stack, it can access c
+//We expose c.begin()... etc etc... 
+//MutantStack lets callers iterate the whole container and access non-top elements
+//It doesn't change std::stack 's push/pop semantics
+//It provides direct access to the underlying containers iterators, and hence, elements
+//Now we can traverse and modify non-top elements
